@@ -39,4 +39,5 @@ Three Parts:
 2. Property: What about those elements do we need to change
 3. Value: What do we want to change it to 
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/ShivamP96/HTML-and-CSS-Essentials/blob/master/pictures/CSSstructure.png "CSS Structure")
+
