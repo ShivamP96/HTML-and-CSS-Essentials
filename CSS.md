@@ -206,6 +206,224 @@ F is the highest, while 0 is the lowest. So, #000000 is black, and #ffffff is wh
 ---
 
 ## Margin and Padding
+> We can set the height and width of an element in the units of pixels or percentages
+
+```css 
+p {
+  width: 100%;
+  height: 200px;
+}
+```
+
+### Margins / Padding / Borders
+
+* Margin sets the distance between two elements
+* Padding adds space between an element's content and it's border
 
 
+> When styling the layout of your page, it helps to picture each element as a picture frame. Each element is made up of a content area, the space surrounding it, known as padding, a border, and then the space that separates one element from the next, the margin
+
+![Margin and Padding](./pictures/cssMargin.png)
+
+#### Padding
+
+Lets say we have a paragarph tag in our HTML
+
+```html
+<p>This is my super awesome paragraph</p>
+```
+
+If we want to add some space between our text and the border - we would want to add some padding
+
+```css
+p {
+  border: 1px solic black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+```
+
+We can write it into one line as well
+
+```css
+p {
+  border: 1px solid black;
+  padding: 10px;
+}
+```
+
+#### Border
+Lets start by adding a border around our paragraph
+
+```css
+p {
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+}
+```
+> Some CSS properties can take more than once value. Instead of writing them on three lines like above we can shorten this code to 
+
+```CSS
+p {
+  border: 1px solid black;
+}
+```
+
+#### Margin
+
+So now we want to move the border of out < p> tag away from the elements that surround it, we would add a margin
+
+```CSS
+p {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+```
+> Margin can be applied to all sides like border 
+
+---
+
+## Specificity
+
+How does CSS which rule to apply when there are conflicting rules, the answer is **Specificity**
+
+1. Styles written at the bottom of a file will overwrite styles written at the op. 
+
+e.g.
+
+```css
+p {
+  font-size: 20px;
+  color: blue;
+}
+#alert {
+  padding: 10px;
+  background-color: red;
+}
+p {
+  color: green;
+}
+```
+
+In this above example the color of the paragraph tags is declared twice, at the top we set it to blue and at the bottom its green. WHen the page loads the font color will be green.
+Cascase: They styles that come last can override styles at the top
+
+Below is a pic explaining the order
+
+![CSS Specificity](./pictures/cssSpec.png)
+
+Another Example
+
+```html
+HTML 
+<p class="special" id="alert">This is a paragraph</p>
+```
+```css
+#alert {
+  color: red;
+}
+.special {
+  color: orange;
+}
+```
+
+The color of the paragraph tag will be red, Even though the cascade is there, because the ID has a higher specificity
+
+---
+
+## Positioning
+
+### Display Property
+> Every HTML element has a default display property. We have block elements, that will take up the entire width of the page (Think < p>, < div>, < h1>, to name a few).
+
+> Inline elements will only take up as much room as their content needs. Anchor tags, image tags and span tags are all inline elements. You can also set the display property to none.
+
+### The Box Model
+
+> We can change the width and the height of an element using, as you've probably guessed, the width and height properties. Sometimes, an element can appear bigger than what you set it to, the elements border and padding can add width past the one you specified. If we had a paragraph set to width: 30px;, and then we add padding, the width of our element can be larger than 30px. To fix this, we can simply set box-sizing: border-box;. This way, we can set as much margin and padding as we want without worrying about the width of the element.
+
+
+Using pixels and percentages
+
+```css
+p {
+  width: 200px;
+}
+
+p {
+  width: 45%;
+}
+```
+Percentages are better for responsive webpages
+
+### Position
+
+The default position of all HTML Elements is static
+
+* **Relative Elements** behave the exact same as static, uness you add some extra properties. Setting the top, right, bottom, and left properties will allow you to adjust where the element is in the page.
+
+[Example](https://codepen.io/MaggieMoss/pen/OWmrPE)
+
+```css
+p {
+  border: 1px solid tomato;
+  position: relative;
+  top: 50px;
+  left: 50px;
+}
+```
+
+* **Fixed Elements** are positioned relative to the viewport (in other words, the browser window). Even if the page is scrolled, an element with a fixed position will always stay in the same place.
+
+[Example](https://codepen.io/MaggieMoss/pen/apWPvZ?editors=1100#0)
+```css
+.alert {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 1px solid tomato;
+}
+```
+
+* **Absolute Elements**  that are positioned absolutely can get pretty tricky. The behave like a fixed element except they position relative to the nearest positioned ancestor. (Any 'positioned' element is simply one that has a position other than static).
+
+[Example](https://codepen.io/MaggieMoss/pen/apWPvZ?editors=1100#0)
+
+```css
+main p {
+  border: 1px solid tomato;
+  position: absolute;
+  top: 50px;
+  left: 60px;
+}
+```
+
+### Floats
+> Floats let us put two elements next to each other. Let's say we have an aside and a main tag. Both of these elements are block level elements, meaning they take up as much width as they can. If we want them to sit next to each other, one option is to use floats. First, we'll start by wrapping both of our tags in a container like so:
+
+```html
+<div class="container">
+    <aside></aside>
+    <main></main>
+  </div>
+```
+
+```css
+aside {
+  width: 30%;
+  float: left;
+}
+And the width of the main tag to 70%.
+
+main {
+  width: 70%;
+  float: left;
+}
+```
+
+[Example](https://codepen.io/MaggieMoss/pen/LxyMPb)
 
