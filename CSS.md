@@ -195,8 +195,17 @@ h1 {
 
 > You can make any colour by combining red, yellow, and blue. 
 
-[Css Hex]()
+![Css Hex](https://github.com/ShivamP96/HTML-and-CSS-Essentials/blob/master/pictures/CssHex.png)
 
+> The first two values correspond to the amount of red in the colour, the next two represent the amount of green, and the last two are blue. If all of the values are equal, the color will be a shade of grey
+
+> Something to note though, is that hex colours use 0-9 and a-f as values.
+
+F is the highest, while 0 is the lowest. So, #000000 is black, and #ffffff is white.
+
+---
+
+## Margin and Padding
 
 
 
