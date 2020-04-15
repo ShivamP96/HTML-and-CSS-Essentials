@@ -324,3 +324,15 @@ Example 2 ( header, main, sidebar and footer)
 </html>
 
 ```
+
+
+
+---
+
+### Div
+
+Already adds its own < br/> so you don't need a line break 
+
+if you use a span its used for inline and small elemental changes
+
+otherwise use a div
