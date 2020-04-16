@@ -337,6 +337,12 @@ if you use a span its used for inline and small elemental changes
 
 otherwise use a div
 
+```html
+you can add a style tag inside a div
+
+<div style="????">
+this will let you add any CSS stuff inline
+```
 ---
 ### Special Characters
 
@@ -344,3 +350,4 @@ otherwise use a div
 &amp
 for & symbol
 ```
+
