@@ -350,4 +350,16 @@ this will let you add any CSS stuff inline
 &amp
 for & symbol
 ```
+---
+### Anchoring links to specific areas on a page
 
+```html
+this could be a section at the bottom of the page
+<a name="about"> </a>
+
+Then at another point like in the navbar
+It'll take you to that point in the page
+
+Note: has to be in <a> a tag
+<a href="#about">About</a>
+```
