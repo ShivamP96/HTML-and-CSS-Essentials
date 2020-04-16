@@ -432,3 +432,5 @@ main {
 # Resources
 
 [Start Bootstrap](https://startbootstrap.com/)
+
+[Font Awesome](https://fontawesome.com/)
