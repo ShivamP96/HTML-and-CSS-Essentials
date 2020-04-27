@@ -304,6 +304,69 @@ grid-tempate-columns doesn't just accept, values in percentages, but also length
 ## Special Unit Fractional **fr**
 
 
-Grid also intr
+Grid also introduces a new unit, the fractional **fr**. Each **fr** unit allocated one share of the available space. For example, if two elements are set to**1fr** and **3fr** respectively, the space is divided into 4 equal shares; The first elemnt occupies 1/4 and the second element 3/4 of any leftover space. 
+
+
+Example below 
+Weeed occupies 1/6 of the left first row (wow english) and the carrots occupy the remining 5/6
+
+``` css
+#garden {
+  dispay: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 20% 20% 20% 20% 20%; 
+}
+```
+![Fractionals](.pictures/gridGardenFractional.png)
+
+
+WHen columns are set with pixels, percentages, or ems, any other column set with fr will divvy up the space thats left over.... 
+
+``` css 
+#garden {
+  display: grid;
+  grid-template-columns: 75px 3fr 2fr;
+}
+75 pixel column of weeds on the left side, 3/5 of the remining spance is growiing carrots and 2/5 has been overrun by weeds
+```
+
+---
+
+
+## Grid-template-rows
+
+
+The same as columns
+
+
+``` css 
+#garden {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 50px  0 0 0;
+}
+Here we used zero fill to fill from the bottom
+
+```
+---
+
+## Grid-template
+
+
+Shorthand that combines grid-template-rows and grid-template-columns
+
+``` css
+#garden {
+  grid-template: 50% 50% / 200px; 
+} 
+This will create a grid with two rows that are 50% each and one column that is 200 px wide
+```
+
+
+
+
+
+
+
 
 
